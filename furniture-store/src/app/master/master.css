@@ -1,15 +1,7 @@
 .grid-container{
-    --icons-color: #12376e;
-    --icons-color-hover: #34598f;
-    --icons-color-lighter:  #34598f;
-    --icons-fontsize: 1.6rem;
-    --header-heigth: 8rem;    
-}
-
-.grid-container{
     display: grid;
     grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
-    grid-template-rows: repeat(3, min-content);
+    grid-template-rows: repeat(3, min-content) 70vh;
     grid-row-gap: 1.6rem;
 }
 
@@ -183,6 +175,7 @@
     visibility: hidden;
     opacity: 0;
     transition: all 1s;
+    z-index: 12;
 }
 
 .dropdown-first-list{
@@ -218,6 +211,12 @@
 
 .dropdown-link-list:hover{
     color: #458a9f;    
+}
+
+.banner-element{
+    grid-column: 2 / 10;
+    grid-row: 4 / 5;
+    z-index: 9;
 }
 
 

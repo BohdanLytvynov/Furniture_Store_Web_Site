@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root{
+    --icons-color: #12376e;
+    --icons-color-hover: #34598f;
+    --icons-color-lighter:  #34598f;
+    --icons-fontsize: 1.6rem;
+    --header-heigth: 8rem;    
+}
+
 html{
     /* We need 1rem = 10px */
     /* 10/16 * 100 = 62.5% */

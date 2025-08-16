@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Banner } from "../banner/banner";
 
 @Component({
   selector: 'app-master',
-  imports: [],
+  imports: [Banner],
   templateUrl: './master.html',
   styleUrl: './master.css'
 })
