@@ -53,3 +53,13 @@
 .day-offer-btn:hover{
     text-shadow: 0.2rem 0.2rem 2rem #777;
 }
+
+@media(max-width: 1202px){
+    .day-offer-heading{
+        font-size: 5rem;
+    }
+
+    .day-offer-paragraph{
+        font-size: 3rem;
+    }
+}

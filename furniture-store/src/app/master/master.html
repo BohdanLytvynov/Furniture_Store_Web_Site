@@ -1,5 +1,180 @@
-<div class="grid-container">  
-    <ul class="social-icons">
+@if(showModal){
+<app-login-register-modal-box
+  class="login-register"
+  (onModalClose)="onLoginRegisterModelClosed()"
+>
+</app-login-register-modal-box>
+}
+
+<div [ngClass]="showModal ? 'grid-container disable-all' : 'grid-container'">
+  <ul class="social-icons">
+    <li class="social-icon-item">
+      <a href="#" class="social-icon-link">
+        <i class="fab fa-square-facebook social-icon"></i>
+      </a>
+    </li>
+    <li class="social-icon-item">
+      <a href="#" class="social-icon-link">
+        <i class="fab fa-square-linkedin social-icon"></i>
+      </a>
+    </li>
+    <li class="social-icon-item">
+      <a href="#" class="social-icon-link">
+        <i class="fab fa-square-twitter social-icon"></i>
+      </a>
+    </li>
+    <li class="social-icon-item">
+      <a href="#" class="social-icon-link">
+        <i class="fab fa-instagram social-icon"></i>
+      </a>
+    </li>
+  </ul>
+
+  <nav class="first-nav">
+    <ul class="first-nav-list">
+      <li class="first-nav-item">
+        <a href="#" class="first-nav-link" (click)="onLoginClicked()">
+          <i class="fas fa-sign-in-alt"></i>
+          Sign Up / Log In
+        </a>
+      </li>
+      <li class="first-nav-item">
+        <a href="#" class="first-nav-link">
+          <i class="fas fa-shopping-cart"></i>
+          Cart(<span>2 Items</span>)
+        </a>
+      </li>
+      <li class="first-nav-item">
+        <a href="#" class="first-nav-link">
+          <i class="fas fa-truck"></i>
+          Order Now
+        </a>
+      </li>
+      <li class="first-nav-item">
+        <a href="#" class="first-nav-link">
+          <i class="fas fa-heart"></i>
+          Wish List
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="search">
+    <form class="search-form">
+      <input type="text" class="search-input" placeholder="Search" />
+      <button class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+  </div>
+
+  <nav class="second-nav">
+    <ul class="second-nav-list">
+      <li class="second-nav-item">
+        <a href="#" class="second-nav-link"> Furniture </a>
+        <div class="dropdown">
+          <ul class="dropdown-first-list">
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Sofas </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Sectionals </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Daybeds & Chaises </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Consolas & Credenzas </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Chairs </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Benches & Ottomans </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Dressers & Chests </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Dining Tables </a>
+            </li>
+          </ul>
+          <ul class="dropdown-second-list">
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Lampert </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Baxter </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Channing </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Maxime </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Talitha </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Rider </a>
+            </li>
+            <li class="dropdown-list-item">
+              <a href="#" class="dropdown-link-list"> Goldfinger </a>
+            </li>
+          </ul>
+          <img
+            src="img/dropdown-image.jpg"
+            alt="Image for the dropdown"
+            class="dropdown-image"
+          />
+        </div>
+      </li>
+      <li class="second-nav-item">
+        <a href="#" class="second-nav-link"> Rooms </a>
+      </li>
+      <li class="second-nav-item">
+        <a href="#" class="second-nav-link"> Kitchen </a>
+      </li>
+      <li class="second-nav-item">
+        <a href="#" class="second-nav-link"> Outdoor </a>
+      </li>
+      <li class="second-nav-item">
+        <a href="#" class="second-nav-link"> Lighting </a>
+      </li>
+      <li class="second-nav-item">
+        <a href="#" class="second-nav-link"> Bed & Bath </a>
+      </li>
+      <li class="second-nav-item">
+        <a href="#" class="second-nav-link"> Window </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar">
+    <div class="menu-icon" (click)="onHambMenuClicked()">
+      <div
+        class="line line-1"
+        [ngStyle]="{
+          'transform': hambClicked ? 'rotate(45deg)' : 'rotate(0deg)',
+          'widht': hambClicked ? '2.5rem' : '1.8rem'
+        }"
+      ></div>
+
+      <div
+        class="line line-2"
+        [ngStyle]="{ opacity: hambClicked ? '0' : '1' }"
+      ></div>
+
+      <div
+        class="line line-3"
+        [ngStyle]="{
+          'transform': hambClicked ? 'rotate(-45deg)' : 'rotate(0deg)',
+          'widht': hambClicked ? '2.5rem' : '1.8rem'
+        }"
+      ></div>
+    </div>
+
+    <ul class="social-icons-list">
       <li class="social-icon-item">
         <a href="#" class="social-icon-link">
           <i class="fab fa-square-facebook social-icon"></i>
@@ -22,190 +197,108 @@
       </li>
     </ul>
 
-    <nav class="first-nav">
-      <ul class="first-nav-list">
-        <li class="first-nav-item">
-          <a href="#" class="first-nav-link">
-            <i class="fas fa-sign-in-alt"></i>
-            Sign Up / Log In
-          </a>
+    <div class="hamb-menu" [ngStyle]="{'left': this.hambClicked? '6rem' : '-60%'}">
+      <h1 class="hamb-menu-header">Welcome!!!</h1>
+
+      <div class="hamb-menu-search">
+        <form>
+          <input type="text" placeholder="Search" />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+
+      <ul class="hamb-menu-content">
+        <li>
+          <a href="#" class="hamb-menu-link"
+          (click)="onHambFurnitureClicked()">             
+            Furniture</a>
+          <div class="hamb-menu-dropdown"
+          [ngStyle]="{'visibility': this.hambFurmitureClicked? 'visible' : 'hidden'}">
+            <ul class="hamb-menu-dropdown-first-list">
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Sofas </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Sectionals </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Daybeds & Chaises </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list">
+                  Consolas & Credenzas
+                </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Chairs </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Benches & Ottomans </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Dressers & Chests </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Dining Tables </a>
+              </li>
+            </ul>
+            <ul class="hamb-menu-dropdown-second-list">
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Lampert </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Baxter </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Channing </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Maxime </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Talitha </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Rider </a>
+              </li>
+              <li class="dropdown-list-item">
+                <a href="#" class="dropdown-link-list"> Goldfinger </a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li class="first-nav-item">
-          <a href="#" class="first-nav-link">
-            <i class="fas fa-shopping-cart"></i>
-            Cart(<span>2 Items</span>)
-          </a>
+        <li>
+          <a href="#" class="hamb-menu-link">Rooms</a>
         </li>
-        <li class="first-nav-item">
-          <a href="#" class="first-nav-link">
-            <i class="fas fa-truck"></i>
-            Order Now
-          </a>
+        <li>
+          <a href="#" class="hamb-menu-link">Kitchen</a>
         </li>
-        <li class="first-nav-item">
-          <a href="#" class="first-nav-link">
-            <i class="fas fa-heart"></i>
-            Wish List
-          </a>
+        <li>
+          <a href="#" class="hamb-menu-link">Outdoor</a>
+        </li>
+        <li>
+          <a href="#" class="hamb-menu-link">Lighting</a>
+        </li>
+        <li>
+          <a href="#" class="hamb-menu-link">Bed & Bath</a>
+        </li>
+        <li>
+          <a href="#" class="hamb-menu-link">Window</a>
         </li>
       </ul>
-    </nav>
-
-    <div class="search">
-        <form class="search-form">
-            <input 
-            type="text" 
-            class="search-input"
-            placeholder="Search">
-            <button class="search-btn">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
     </div>
 
-    <nav class="second-nav">
-        <ul class="second-nav-list">
-            <li class="second-nav-item">
-                <a href="#" class="second-nav-link">
-                    Furniture
-                </a>
-                <div class="dropdown">
-                    <ul class="dropdown-first-list">
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Sofas
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Sectionals
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Daybeds & Chaises
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Consolas & Credenzas
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Chairs
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Benches & Ottomans
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Dressers & Chests
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Dining Tables
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="dropdown-second-list">
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Lampert
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Baxter
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Channing
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Maxime
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Talitha
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Rider
-                            </a>
-                        </li>
-                        <li class="dropdown-list-item">
-                            <a href="#" 
-                            class="dropdown-link-list">
-                                Goldfinger
-                            </a>
-                        </li>                        
-                    </ul>
-                    <img 
-                    src="img/dropdown-image.jpg" 
-                    alt="Image for the dropdown"
-                    class="dropdown-image">
-                </div>
-            </li>
-            <li class="second-nav-item">
-                <a href="#" class="second-nav-link">
-                    Rooms
-                </a>
-            </li>
-            <li class="second-nav-item">
-                <a href="#" class="second-nav-link">
-                    Kitchen
-                </a>
-            </li>
-            <li class="second-nav-item">
-                <a href="#" class="second-nav-link">
-                    Outdoor
-                </a>
-            </li>
-            <li class="second-nav-item">
-                <a href="#" class="second-nav-link">
-                    Lighting
-                </a>
-            </li>
-            <li class="second-nav-item">
-                <a href="#" class="second-nav-link">
-                    Bed & Bath
-                </a>
-            </li>
-            <li class="second-nav-item">
-                <a href="#" class="second-nav-link">
-                    Window
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <app-banner class="banner-element"></app-banner>
-    <app-day-offer class="day-offer"></app-day-offer>
-    <app-best-selling class="best-selling"></app-best-selling>
-    <app-gallery class="gallery"></app-gallery>
-    <app-contact class="contact"></app-contact>
-    <app-footer class="footer"></app-footer>
+    <div class="year">
+      <p>2025</p>
+    </div>
+  </div>
+
+  <app-banner class="banner-element"></app-banner>
+  <app-day-offer class="day-offer"></app-day-offer>
+  <app-best-selling class="best-selling"></app-best-selling>
+  <app-gallery class="gallery"></app-gallery>
+  <app-contact class="contact"></app-contact>
+  <app-footer class="footer"></app-footer>
 </div>

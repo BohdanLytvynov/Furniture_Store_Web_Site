@@ -1,0 +1,35 @@
+<div class="forms-wrapper">
+  <label class="cross" (click)="onCloseModalClicked()">&#10005;</label>
+  <div class="btns-wrapper">
+    <button 
+    [ngClass]="signupLogin? 'btns-wrapper-btn selected-btn' : 'btns-wrapper-btn'" 
+    (click)="onShowSignUpClicked()">
+      Sign Up
+    </button>
+    <button (click)="onShowLoginClicked()"
+    [ngClass]="signupLogin? 'btns-wrapper-btn' : 'btns-wrapper-btn selected-btn'">
+      Login
+    </button>
+  </div>
+  <form class="sign-up-form" 
+  [ngStyle]="{'display': signupLogin? 'block' : 'none'}">
+    <h3 class="form-heading">Sign Up</h3>
+    <div class="fullname-inputs-wrapper">
+      <input type="text" placeholder="First Name" />
+      <input type="text" placeholder="Second Name" />
+    </div>
+    <input type="text" class="form-input" placeholder="Username" />
+    <input type="email" class="form-input" placeholder="Email Address" />
+    <input type="password" class="form-input" placeholder="Password" />
+    <input type="password" class="form-input" placeholder="Confirm Password" />
+    <input type="submit" value="Sign Up" class="form-btn" />
+  </form>
+
+  <form class="login-form" 
+  [ngStyle]="{'display': !signupLogin? 'block' : 'none'}">
+    <h3 class="form-heading">Login</h3>        
+    <input type="email" class="form-input" placeholder="Login" />
+    <input type="password" class="form-input" placeholder="Password" />
+    <input type="submit" value="Login" class="form-btn" />
+  </form>
+</div>

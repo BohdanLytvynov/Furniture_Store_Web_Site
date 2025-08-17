@@ -174,3 +174,9 @@
 .slide-btn:focus{
     background-color: var(--icons-color);    
 }
+
+@media (max-width: 1202px) {
+    .banner-heading{
+        font-size: 6rem;
+    }
+}
